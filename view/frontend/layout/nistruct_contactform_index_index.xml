@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout.xsd">
+    <head>
+        <css src="Nistruct_ContactForm::css/form.css"/>
+    </head>
+    <referenceContainer name="content">
+        <block class="Nistruct\ContactForm\Block\Form" name="contact_form" template="Nistruct_ContactForm::form.phtml"/>
+    </referenceContainer>
+</layout>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">nistruct_contactform_listing.nistruct_contactform_listing_data_source</item>
+            <item name="deps" xsi:type="string">nistruct_contactform_listing.nistruct_contactform_listing_data_source</item>
+        </item>
+        <!--Buttons-->
+        <item name="spinner" xsi:type="string">contact_form_columns</item>
+    </argument>
+    <dataSource name="nistruct_contactform_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">nistruct_contactform_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" path="mui/index/render" xsi:type="url"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">entity_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <columns name="contact_form_columns">
+        <column name="entity_id">
+            <settings>
+                <label translate="true">ID</label>
+                <filter>textRange</filter>
+                <sortable>true</sortable>
+                <dataType>number</dataType>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <label translate="true">Name</label>
+                <filter>text</filter>
+                <sortable>true</sortable>
+                <dataType>text</dataType>
+            </settings>
+        </column>
+        <column name="email">
+            <settings>
+                <label translate="true">Email</label>
+                <filter>text</filter>
+                <sortable>true</sortable>
+                <dataType>text</dataType>
+            </settings>
+        </column>
+        <column name="message">
+            <settings>
+                <label translate="true">Message</label>
+                <filter>text</filter>
+                <sortable>true</sortable>
+                <dataType>text</dataType>
+            </settings>
+        </column>
+        <column name="created_at">
+            <settings>
+                <label translate="true">Created At</label>
+                <filter>dateRange</filter>
+                <sortable>true</sortable>
+                <dataType>date</dataType>
+            </settings>
+        </column>
+    </columns>
+    <filters>
+        <filterDate name="created_at">
+            <settings>
+                <label translate="true">Created At</label>
+                <componentType>filterDate</componentType>
+                <dataType>date</dataType>
+                <dataScope>created_at</dataScope>
+            </settings>
+        </filterDate>
+        <filterInput name="name">
+            <settings>
+                <label translate="true">Name</label>
+                <dataType>text</dataType>
+                <dataScope>name</dataScope>
+            </settings>
+        </filterInput>
+        <filterInput name="email">
+            <settings>
+                <label translate="true">Email</label>
+                <dataType>text</dataType>
+                <dataScope>email</dataScope>
+            </settings>
+        </filterInput>
+        <filterInput name="message">
+            <settings>
+                <label translate="true">Message</label>
+                <dataType>text</dataType>
+                <dataScope>message</dataScope>
+            </settings>
+        </filterInput>
+    </filters>
+</listing>

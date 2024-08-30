@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Argument for ContactForm Block -->
+    <type name="Nistruct\ContactForm\Block\Form">
+        <arguments>
+            <argument name="scopeConfig" xsi:type="object">Magento\Framework\App\Config\ScopeConfigInterface</argument>
+        </arguments>
+    </type>
+
+    <!-- Backend Form Container Configuration -->
+    <type name="Magento\Backend\Block\Widget\Form\Container">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="blockGroup" xsi:type="string">Nistruct_ContactForm</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Nistruct\ContactForm\Observer\LogUserIp">
+        <arguments>
+            <argument name="logger" xsi:type="object">Magento\Framework\Logger\Monolog</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+    <arguments>
+        <argument name="collections" xsi:type="array">
+            <item name="nistruct_contactform_listing_data_source" xsi:type="string">NistructContactFormCollection</item>
+        </argument>
+    </arguments>
+    </type>
+
+    <virtualType name="NistructContactFormCollection" type="Nistruct\ContactForm\Ui\DataProvider\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">nistruct_contact_form</argument>
+            <argument name="resourceModel" xsi:type="string">Nistruct\ContactForm\Model\ResourceModel\Contact</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Nistruct\ContactForm\Ui\DataProvider\Collection">
+    <arguments>
+        <argument name="logger" xsi:type="object">Psr\Log\LoggerInterface</argument>
+    </arguments>
+    </type>
+
+
+
+</config>
+

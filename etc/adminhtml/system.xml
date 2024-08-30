@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/config.xsd">
+    <system>
+        <section id="nistruct_contactform" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Nistruct Contact Form</label>
+            <tab>general</tab>
+            <resource>Nistruct_ContactForm::config</resource>
+            <group id="contact_form_settings" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Contact Form Settings</label>
+                <field id="email_recipient" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Recipient Email</label>
+                    <comment>Enter the email address where the contact form submissions will be sent.</comment>
+                </field>
+                <field id="enable_form" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Contact Form</label>
+                    <comment>Enable or disable the contact form.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+
+

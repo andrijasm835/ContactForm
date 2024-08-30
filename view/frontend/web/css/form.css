@@ -1,0 +1,91 @@
+.contact-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.contact-form-wrapper h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nistruct-contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.nistruct-contact-form .field {
+    margin-bottom: 15px;
+}
+
+.nistruct-contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.nistruct-contact-form input[type="text"],
+.nistruct-contact-form input[type="email"],
+.nistruct-contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.nistruct-contact-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.nistruct-contact-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nistruct-contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.message.success {
+    color: green;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    color: red;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        padding: 10px;
+    }
+    
+    .nistruct-contact-form input,
+    .nistruct-contact-form textarea {
+        font-size: 14px;
+    }
+    
+    .nistruct-contact-form button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

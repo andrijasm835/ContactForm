@@ -1,0 +1,22 @@
+{
+    "name": "nistruct/module-contactform",
+    "version": "1.0.0",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+      "magento/framework": "*",
+      "magento/module-ui": "*",
+      "magento/module-backend": "*"
+    },
+    "license": [
+      "Proprietary"
+    ],
+    "autoload": {
+      "files": [
+        "registration.php"
+      ],
+      "psr-4": {
+        "Nistruct\\ContactForm\\": ""
+      }
+    }
+  }

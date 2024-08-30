@@ -1,0 +1,61 @@
+<?php if ($block->isContactFormEnabled()): ?>
+    <div class="contact-form-wrapper">
+        <h1>Contact Us</h1>
+        <?php if ($block->getSuccessMessage()): ?>
+            <div class="message success">
+                <?php echo $block->escapeHtml($block->getSuccessMessage()); ?>
+            </div>
+        <?php endif; ?>
+        <?php if ($block->getErrorMessage()): ?>
+            <div class="message error">
+                <?php echo $block->escapeHtml($block->getErrorMessage()); ?>
+            </div>
+        <?php endif; ?>
+        <form id="contactForm" action="<?php echo $block->getFormActionUrl(); ?>" method="post" class="nistruct-contact-form">
+            <div class="field">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" value="<?php echo $block->getFormFieldValue('name'); ?>" placeholder="Your Name" required />
+            </div>
+            
+            <div class="field">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" value="<?php echo $block->getFormFieldValue('email'); ?>" placeholder="Your Email" required />
+            </div>
+            
+            <div class="field">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required><?php echo $block->getFormFieldValue('message'); ?></textarea>
+            </div>
+            
+            <div class="actions">
+                <button type="submit" id="submitBtn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        require(['jquery'], function($) {
+            $(document).ready(function() {
+                $('#contactForm').on('submit', function(event) {
+                    var emailField = $('#email');
+                    var emailValue = emailField.val();
+
+                    if (!isValidEmail(emailValue)) {
+                        event.preventDefault(); // Sprečava slanje forme
+                        emailField.addClass('mage-error');
+                        alert('Please enter a valid email address.');
+                    }
+                });
+
+                function isValidEmail(email) {
+                    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return re.test(email);
+                }
+            });
+        });
+    </script>
+<?php else: ?>
+    <p>Contact form is currently disabled.</p>
+<?php endif; ?>
+
+

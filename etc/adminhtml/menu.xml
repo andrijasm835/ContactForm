@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/menu.xsd">
+    <menu>
+        <add id="Nistruct_ContactForm::contactform"
+             title="Nistruct Contact Form Submissions"
+             module="Nistruct_ContactForm"
+             sortOrder="10"
+             parent="Magento_Backend::stores"
+             action="nistruct-contact-form/index/index"
+             resource="Nistruct_ContactForm::contact_form"/>
+    </menu>
+</config>
