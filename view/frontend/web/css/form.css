@@ -3,41 +3,61 @@
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Dodato za Flexbox */
+    flex-direction: column; /* Elementi su jedan ispod drugog */
+    align-items: center; /* Horizontalno centriranje */
 }
 
 .contact-form-wrapper h1 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    width: 100%; /* Širina naslova prilagođena širini omotača */
 }
 
 .nistruct-contact-form {
+    width: 100%; /* Forma sada zauzima punu širinu omotača */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nistruct-contact-form .field {
     display: flex;
     flex-direction: column;
 }
 
-.nistruct-contact-form .field {
-    margin-bottom: 15px;
-}
-
 .nistruct-contact-form label {
-    display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #555; /* Svetlija boja za tekst */
 }
 
 .nistruct-contact-form input[type="text"],
 .nistruct-contact-form input[type="email"],
 .nistruct-contact-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* Dodata tranzicija za efekt fokusa */
+}
+
+.nistruct-contact-form input[type="text"]:focus,
+.nistruct-contact-form input[type="email"]:focus,
+.nistruct-contact-form textarea:focus {
+    border-color: #007bff; /* Plava boja na fokus */
+    outline: none; /* Uklanja default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Dodaje svetlu senku */
 }
 
 .nistruct-contact-form textarea {
-    height: 100px;
+    height: 120px; /* Malo povećana visina */
     resize: vertical;
 }
 
@@ -45,10 +65,11 @@
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 20px; /* Veće margine za bolje korisničko iskustvo */
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px; /* Veći font */
+    transition: background-color 0.3s ease; /* Tranzicija za hover efekat */
 }
 
 .nistruct-contact-form button[type="submit"]:hover {
@@ -57,35 +78,38 @@
 
 .message {
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 4px;
     font-weight: bold;
+    font-size: 14px; /* Povećan font za bolju čitljivost */
 }
 
 .message.success {
-    color: green;
+    color: #155724;
     background-color: #d4edda;
     border: 1px solid #c3e6cb;
 }
 
 .message.error {
-    color: red;
+    color: #721c24;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
 }
 
 @media (max-width: 768px) {
     .contact-form-wrapper {
-        padding: 10px;
+        padding: 15px;
     }
-    
+
     .nistruct-contact-form input,
     .nistruct-contact-form textarea {
-        font-size: 14px;
+        font-size: 15px;
+        padding: 10px; /* Smanjene margine na manjim ekranima */
     }
-    
+
     .nistruct-contact-form button {
-        font-size: 14px;
-        padding: 8px 12px;
+        font-size: 15px;
+        padding: 10px 16px;
     }
 }
+
